@@ -1,0 +1,50 @@
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+/* --- WebKit (Chrome, Edge, Safari) --- */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--track-color, #ccc); /* your normal track color */
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--thumb-color, #007bff);
+  margin-top: -6px; /* centers thumb */
+  cursor: pointer;
+}
+
+/* remove that filled “progress” look */
+input[type="range"]::-webkit-slider-thumb::before,
+input[type="range"]::-webkit-slider-runnable-track::before {
+  background: transparent !important;
+}
+
+/* --- Firefox --- */
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--track-color, #ccc);
+}
+input[type="range"]::-moz-range-progress {
+  background: transparent; /* THIS is the filled color part */
+}
+
+/* --- IE / old Edge --- */
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: transparent; /* the filled portion */
+}
+input[type="range"]::-ms-fill-upper {
+  background: var(--track-color, #ccc); /* the rest of the track */
+}
